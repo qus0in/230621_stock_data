@@ -14,7 +14,7 @@ import time
 st.title('Real-time Stock Price Visualization')
 
 # Get user input
-ticker = st.text_input("Enter a ticker symbol (e.g. AAPL): ", 'AAPL')
+ticker = st.text_input("Enter a ticker symbol (e.g. TSLA): ", 'TSLA')
 start_date = st.date_input("Start date", date.today() - timedelta(days=365))
 end_date = st.date_input("End date", date.today())
 
@@ -35,7 +35,7 @@ for t in range(len(data)):
     chart.plotly_chart(fig)
 
     # Wait for 1 second before adding the next day
-    time.sleep(1)
+    time.sleep(0.1)
 
     # Clear the figure for the next day
     fig = go.Figure()
